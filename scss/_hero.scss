@@ -1,0 +1,23 @@
+.hero{
+    position: relative;//用来给伪元素定位
+    height: 300px;
+    @include flex-centre;
+    color:$text-color;
+    font-size: 2.5rem;
+    font-weight: bold;
+
+    //半透明背景图，伪元素使其不会被交互，适合背景图使用，且不用直接加在html里面
+    &::before{
+        content: '';
+        background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+        position: absolute;//因为上面有relative，所以会参考上面进行定位
+        inset:0; //四周都是0, 图片覆盖整个容器
+        opacity: 0.5;//透明度
+        z-index: -1; //将图片后移一层，保证hero的字在上方
+    }
+    h1 {
+        position: relative;
+        z-index: 1;
+
+    }
+}

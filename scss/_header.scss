@@ -1,0 +1,34 @@
+header{
+    @include flex-centre;
+    //使用@include调用了_mixins里的function
+    //justify-content使用下面的覆盖了上面的
+    justify-content: space-between;
+    padding: $spacing-md $spacing-lg;
+    color: white;
+    background-color: $primary-color;
+
+    .logo{
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    nav ul{
+        @include flex-centre;
+        gap: $spacing-md;
+        list-style: none;
+        li a{
+            color: white;
+            text-decoration: none;
+            padding: $spacing-sm $spacing-md;
+            border-radius: 4px;
+            transition: background 0.3s;
+
+            //&可以使得当前的选择器，li a 拥有这个效果
+            &:hover {
+                background-color: $secondary-color;
+                color: $primary-color;
+            }
+        }
+    }
+
+}

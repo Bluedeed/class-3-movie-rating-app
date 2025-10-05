@@ -1,0 +1,44 @@
+//% placeholder selector，只有@extend它的时候才会被启用
+%card-style {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden; //超出框架的隐藏
+    padding: $spacing-md; //内边距
+    text-align: center;
+    box-shadow: 0 -4px 132px rgba(0,0,0,0.1);//卡片阴影 左右偏移0，向上偏移4，模糊半径大，颜色淡
+    transition: transform 0.3s;//移动在0.3s内结束
+    &:hover {
+        transform: translateY(-5px);
+    } //悬停时向上移动5px
+}
+
+.movies {
+    display: grid; //网格布局
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    //grid-template-columns用于设置列数相关，重复进行（每列尽可能放，最小250px）
+    gap: $spacing-lg;
+    padding: $spacing-lg;
+    .movie-card {
+        @extend %card-style;
+        img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;//不会更改图片比例，会才剪掉上/下的东西
+            margin-bottom: $spacing-sm;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: $primary-color;
+            margin-bottom: $spacing-sm;
+        }
+        .rating{ //设置“rating”这个class的格式，所以要用.rating
+            font-size: 1.3rem;
+            color: $primary-color;
+            margin-bottom: $spacing-sm;
+        }
+        p {
+            color: $text-color;
+        }
+    }
+}

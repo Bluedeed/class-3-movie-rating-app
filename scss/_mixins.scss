@@ -1,0 +1,22 @@
+//需要先define，再use
+//名字为 flex-centre，并且被调用的时候让东西居中
+@mixin flex-centre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin button-style($bg-color, $text-color){
+    background-color: $bg-color;
+    color: $text-color;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer; //改变光标
+    font-weight: bold;
+    transition: background-color 0.3s;
+    &:hover{
+        background-color: darken($bg-color, 10%);
+    }
+}
+
