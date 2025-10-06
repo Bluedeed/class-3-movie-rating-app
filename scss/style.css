@@ -122,4 +122,38 @@ header nav ul li a:hover {
 }
 .btn.btn-secondary:hover {
   background-color: rgb(30.1449275362, 125.8550724638, 52);
+}
+
+footer {
+  background-color: black;
+  color: white;
+  padding: 1rem 2rem 3rem 2rem;
+}
+footer .footer-container {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+@media (max-width: 780px) {
+  footer .footer-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+footer .footer-container .footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+footer .footer-container .footer-col h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+footer .footer-container .footer-col a {
+  text-decoration: none;
+  color: #ccc;
+}
+footer .footer-container .footer-col a:hover {
+  color: #fff;
 }/*# sourceMappingURL=style.css.map */

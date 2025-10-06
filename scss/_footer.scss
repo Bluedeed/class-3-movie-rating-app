@@ -1,0 +1,38 @@
+footer{
+    background-color: black;
+    color: white;
+    padding: 1rem 2rem 3rem 2rem;
+    .footer-container{
+        display: flex;
+        justify-content: space-around;
+        max-width: 1000px;
+        margin: 0 auto;
+
+        @media(max-width:780px){
+            flex-direction: column;
+            gap: 2rem ;
+        }
+
+        .footer-col{
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            h4{
+                margin-bottom: 0.5rem;
+                font-size: 1.2rem;
+            }
+
+            a{
+                text-decoration: none;
+                color: #ccc;
+
+                &:hover{
+                    color: #fff;
+                }
+            }
+
+        }
+
+    }
+}
